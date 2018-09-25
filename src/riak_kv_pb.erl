@@ -14476,9 +14476,8 @@ mk_type_error(Error, ValueSeen, Path) ->
 
 prettify_path([]) -> top_level;
 prettify_path(PathR) ->
-    list_to_atom(string:join(lists:map(fun atom_to_list/1,
-				       lists:reverse(PathR)),
-			     ".")).
+    list_to_atom(lists:join(".", lists:map(fun atom_to_list/1,
+				       lists:reverse(PathR)))).
 
 
 
